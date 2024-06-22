@@ -9,9 +9,11 @@ public class App
     public static void main( String[] args )
     {
         Alien nik=new Alien();
-        nik.setAid(10);
-        nik.setAname("Nikhil Kumar Rana");
-        nik.setColor("black");
+        
+        nik.setAid(11);
+        nik.setAname("Ritik");
+        nik.setColor("blue");
+        
         
         Configuration con=new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Alien.class); //By default file ka name yehi hota hai ,to do ya mtt do file name do it's your choice but in case of different file name ,it is mandatory to specify the name of the file 
         SessionFactory sf=con.buildSessionFactory();
