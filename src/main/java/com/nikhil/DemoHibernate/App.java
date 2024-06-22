@@ -12,7 +12,7 @@ public class App
         nik.setAname("Nikhil Kumar Rana");
         nik.setColor("black");
         
-        Configuration con=new Configuration().configure("hibernate.cfg.xml"); //By default file ka name yehi hota hai ,to do ya mtt do file name do it's your choice but in case of different file name ,it is mandatory to specify the name of the file 
+        Configuration con=new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Alien.class); //By default file ka name yehi hota hai ,to do ya mtt do file name do it's your choice but in case of different file name ,it is mandatory to specify the name of the file 
         SessionFactory sf=con.buildSessionFactory();
         Session session=sf.openSession();
         session.save(nik);
