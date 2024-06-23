@@ -11,7 +11,7 @@ public class Alien
 {	@Id
 	@Column(name="sid")
     private int id;
-	@Transient                //In Hibernate and JPA, the @Transient annotation is used to indicate that a particular field of a class should not be persisted to the database. When a field is marked with @Transient, it is excluded from the ORM mapping and is not considered a persistent attribute.
+	@Column(name="sname")
     private String name;
     private String color;
     public int getAid() {
@@ -37,6 +37,13 @@ public class Alien
     public void setColor(String color) {
         this.color = color;
     }
+
+	@Override
+	public String toString() {
+		return "Alien [id=" + id + ", name=" + name + ", color=" + color + "]";
+	}
+    
+    
 
 
 }

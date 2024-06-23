@@ -11,17 +11,21 @@ public class App
     public static void main( String[] args )
     {
         Alien nik=new Alien();
-        nik.setAid(02);
-        nik.setAname("mikki");
-        nik.setColor("white");
+//        nik.setAid(03);
+//        nik.setAname("Anamika");
+//        nik.setColor("black");
         
-        Configuration con=new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Alien.class); //By default file ka name yehi hota hai ,to do ya mtt do file name do it's your choice but in case of different file name ,it is mandatory to specify the name of the file 
-        //ServiceRegistry is a Interface ,we can't create its object 
+        Configuration con=new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Alien.class); 
         ServiceRegistry reg=new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
         SessionFactory sf=con.buildSessionFactory(reg);
         Session session=sf.openSession();
         Transaction tx=session.beginTransaction();
-        session.save(nik);
+//      session.save(nik);        
+        nik=(Alien)session.get(Alien.class,01);  //passing the id  
         tx.commit();
+        System.out.println(nik);
+        
+        
+        
     }
 }
