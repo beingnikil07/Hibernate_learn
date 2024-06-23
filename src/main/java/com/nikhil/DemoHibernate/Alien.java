@@ -1,29 +1,32 @@
 package com.nikhil.DemoHibernate;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="students")  //creates a new table 
 public class Alien  
 {	@Id
-    private int aid;
-    private String aname;
+	@Column(name="sid")
+    private int id;
+    @Column(name="sname")
+    private String name;
     private String color;
-
     public int getAid() {
-        return aid;
+        return id;
     }
 
-    public void setAid(int aid) {
-        this.aid = aid;
+    public void setAid(int id) {
+        this.id = id;
     }
 
     public String getAname() {
-        return aname;
+        return name;
     }
 
-    public void setAname(String aname) {
-        this.aname = aname;
+    public void setAname(String name) {
+        this.name = name;
     }
 
     public String getColor() {
