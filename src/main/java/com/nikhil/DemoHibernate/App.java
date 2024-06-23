@@ -11,8 +11,8 @@ public class App
     public static void main( String[] args )
     {
         Alien nik=new Alien();
-        nik.setAid(01);
-        nik.setAname("Nikki");
+        nik.setAid(02);
+        nik.setAname("mikki");
         nik.setColor("white");
         
         Configuration con=new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Alien.class); //By default file ka name yehi hota hai ,to do ya mtt do file name do it's your choice but in case of different file name ,it is mandatory to specify the name of the file 
