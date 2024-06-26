@@ -10,20 +10,27 @@ public class App
 {
     public static void main( String[] args )
     {
-        Alien nik=new Alien();
-//        nik.setAid(03);
-//        nik.setAname("Anamika");
-//        nik.setColor("black");
-        
+    	AlienName an=new AlienName();
+    	an.setFname("Nikhil");
+    	an.setMname("Kumar");
+    	an.setLname("Rana");
+    	
+    	Alien a=new Alien();
+    	a.setAid(01);
+    	a.setName(an);
+    	
+    	
         Configuration con=new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Alien.class); 
         ServiceRegistry reg=new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
         SessionFactory sf=con.buildSessionFactory(reg);
         Session session=sf.openSession();
         Transaction tx=session.beginTransaction();
-//      session.save(nik);        
-        nik=(Alien)session.get(Alien.class,01);  //passing the id  
+        session.save(a);
         tx.commit();
-        System.out.println(nik);
+        System.out.println(a);
+        
+        
+        
         
         
         
