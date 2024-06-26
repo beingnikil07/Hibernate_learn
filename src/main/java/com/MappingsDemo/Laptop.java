@@ -20,5 +20,10 @@ public class Laptop {
 	public void setLname(String lname) {
 		this.lname = lname;
 	}
+	@Override
+	public String toString() {
+		return "Laptop [lid=" + lid + ", lname=" + lname + "]";
+	}
+	
 	
 }
