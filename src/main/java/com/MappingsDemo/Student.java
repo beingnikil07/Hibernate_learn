@@ -1,7 +1,7 @@
 package com.MappingsDemo;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Student {
@@ -9,6 +9,10 @@ public class Student {
 	private int rollno;
 	private String name;
 	private int marks;
+	@OneToOne                   //indicates the relation betweeen Laptop & Student
+	private Laptop laptop;   
+	
+	
 	public int getRollno() {
 		return rollno;
 	}
@@ -26,6 +30,13 @@ public class Student {
 	}
 	public void setMarks(int marks) {
 		this.marks = marks;
+	}
+	
+	public Laptop getLaptop() {
+		return laptop;
+	}
+	public void setLaptop(Laptop laptop) {
+		this.laptop = laptop;
 	}
 	@Override
 	public String toString() {

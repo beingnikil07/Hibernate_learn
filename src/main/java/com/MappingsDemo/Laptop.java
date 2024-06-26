@@ -8,6 +8,9 @@ public class Laptop {
 	@Id 
 	private int lid;
 	private String lname;
+	
+	
+	
 	public int getLid() {
 		return lid;
 	}
