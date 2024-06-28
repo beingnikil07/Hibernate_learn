@@ -1,16 +1,18 @@
 package com.MappingsDemo;
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-
+import jakarta.persistence.OneToMany;
 @Entity
 public class Student {
 	@Id
 	private int rollno;
 	private String name;
 	private int marks;
-	@OneToOne                   //indicates the relation betweeen Laptop & Student
-	private Laptop laptop;   
+	@OneToMany               
+	private List<Laptop> laptop =new ArrayList<>();   
 	
 	
 	public int getRollno() {
@@ -32,10 +34,10 @@ public class Student {
 		this.marks = marks;
 	}
 	
-	public Laptop getLaptop() {
+	public List<Laptop> getLaptop() {
 		return laptop;
 	}
-	public void setLaptop(Laptop laptop) {
+	public void setLaptop(List<Laptop> laptop) {
 		this.laptop = laptop;
 	}
 	@Override

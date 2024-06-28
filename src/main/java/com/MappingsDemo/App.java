@@ -20,7 +20,7 @@ public class App {
 		s.setRollno(1);
 		s.setName("Nikhil Rana");
 		s.setMarks(90);
-		s.setLaptop(laptop);
+		s.getLaptop().add(laptop);
 		
 		
 		Configuration con=new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Student.class).addAnnotatedClass(Laptop.class);	
