@@ -24,12 +24,22 @@ public class App
         ServiceRegistry reg=new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
         SessionFactory sf=con.buildSessionFactory(reg);
         
+        
+        
         Session session1=sf.openSession();
         session1.beginTransaction();
         a=(Alien) session1.get(Alien.class,01);
         System.out.println(a);
         session1.getTransaction().commit();
-        a=(Alien) session1.get(Alien.class,01);
+        session1.close();
+        
+        Session session2=sf.openSession();
+        session2.beginTransaction();
+        a=(Alien) session2.get(Alien.class,01);
+        System.out.println(a);
+        session2.getTransaction().commit();
+        session2.close();
+       
          
     }
 }
