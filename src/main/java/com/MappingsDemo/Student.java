@@ -4,14 +4,14 @@ import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToMany;
 @Entity
 public class Student {
 	@Id
 	private int rollno;
 	private String name;
 	private int marks;
-	@OneToMany               
+	@ManyToMany(mappedBy="student")     
 	private List<Laptop> laptop =new ArrayList<>();   
 	
 	
