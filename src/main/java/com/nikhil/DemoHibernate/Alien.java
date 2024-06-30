@@ -4,7 +4,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="students")  //creates a new table 
 public class Alien  
 {	@Id
     private int Aid;
