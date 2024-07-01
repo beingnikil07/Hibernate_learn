@@ -1,6 +1,6 @@
 package com.nikhil.DemoHibernate;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class AlienName {

@@ -21,15 +21,10 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    
-    <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
-<dependency>
-    <groupId>org.hibernate.orm</groupId>
-    <artifactId>hibernate-core</artifactId>
-    <version>6.5.2.Final</version>
-</dependency>
+
 
 <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+
 <dependency>
     <groupId>com.mysql</groupId>
     <artifactId>mysql-connector-j</artifactId>
@@ -43,12 +38,16 @@
     <version>2.10.9.2</version>
 </dependency>
 
-<!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-ehcache -->
-<dependency>
-    <groupId>org.hibernate.orm</groupId>
-    <artifactId>hibernate-ehcache</artifactId>
-    <version>6.0.0.Alpha7</version>
-</dependency>
+   <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>5.4.30.Final</version>
+    </dependency>
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-ehcache</artifactId>
+        <version>5.4.30.Final</version>
+    </dependency>
 
 
   </dependencies>

@@ -14,7 +14,6 @@ public class App
     	an.setFname("Anamika");
     	an.setMname("RAI");
     	an.setLname("Rana");
-    	
     	Alien a=new Alien();
     	a.setAid(03);
     	a.setName(an);
@@ -28,15 +27,19 @@ public class App
         
         Session session1=sf.openSession();
         session1.beginTransaction();
+        
         a=(Alien) session1.get(Alien.class,01);
         System.out.println(a);
-        session1.getTransaction().commit();
+        
+        session1.getTransaction().commit(); 
         session1.close();
         
         Session session2=sf.openSession();
         session2.beginTransaction();
+       
         a=(Alien) session2.get(Alien.class,01);
         System.out.println(a);
+        
         session2.getTransaction().commit();
         session2.close();
        
