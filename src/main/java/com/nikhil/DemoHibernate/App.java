@@ -28,7 +28,7 @@ public class App
         session1.beginTransaction();
         //Fetching data from database using query
         Query q1=session1.createQuery("from Alien where aid=1");
-        
+        q1.setCacheable(true);
         a=(Alien)q1.uniqueResult();
         System.out.println(a);
         
@@ -38,7 +38,7 @@ public class App
         Session session2=sf.openSession();
         session2.beginTransaction();
         Query q2=session2.createQuery("from Alien where aid=1");
-        
+        q2.setCacheable(true);
         a=(Alien)q2.uniqueResult();
         System.out.println(a);
         
