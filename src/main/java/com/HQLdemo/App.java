@@ -23,14 +23,13 @@ public class App {
         
         //Query q=session.createQuery("from Student");
         
-        Query q=session.createQuery("select rollno,name,marks from Student where rollno=7");
-        //We are using Object array becz rollno,name,marks sabke datatypes different hai,if we not use Object data type it will shows error for this query
+        Query q=session.createQuery("select rollno,name,marks from Student");
+        List<Object[]> students=(List<Object[]>)q.list();
         
-        Object[] student=(Object[]) q.uniqueResult();  
-        
-        for(Object o:student) {
-        	System.out.println(o);
+        for(Object[] o:students) {
+        	System.out.println(o[0]+" : "+o[1]+" : "+o[2]);
         }
+        
         
         
         session.getTransaction().commit();
