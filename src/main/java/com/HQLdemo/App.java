@@ -23,22 +23,15 @@ public class App {
         
         //Query q=session.createQuery("from Student");
         
-        Query q=session.createQuery("from Student where marks>50");
-        List<Student> students=q.list();   //becz list() method returns list 
+        Query q=session.createQuery("select rollno,name,marks from Student where rollno=7");
+        //We are using Object array becz rollno,name,marks sabke datatypes different hai,if we not use Object data type it will shows error for this query
         
-        for(Student s:students) {
-        	System.out.println(s);
+        Object[] student=(Object[]) q.uniqueResult();  
+        
+        for(Object o:student) {
+        	System.out.println(o);
         }
         
-        Random r=new Random();
-        
-        for(int i=1;i<=50;i++) {
-        	Student s=new Student();
-        	s.setRollno(i);
-        	s.setName("Name "+i);
-        	s.setMarks(r.nextInt(100));
-        	session.save(s);
-        }
         
         session.getTransaction().commit();
         
