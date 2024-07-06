@@ -20,11 +20,10 @@ public class App {
         SessionFactory sf=con.buildSessionFactory(reg);
         Session session=sf.openSession();
         session.beginTransaction();
-       
         SQLQuery q=session.createSQLQuery("select * from student where marks>60");
-        
-        List students=q.list();
-        for(Object o:students) {
+        q.addEntity(Student.class);  //mentioning that the enity is class Student
+        List<Student> students=q.list();
+        for(Student o:students) {
         	System.out.println(o);
         }
         
