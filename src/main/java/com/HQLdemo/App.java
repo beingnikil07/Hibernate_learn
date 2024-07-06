@@ -19,17 +19,16 @@ public class App {
         SessionFactory sf=con.buildSessionFactory(reg);
         Session session=sf.openSession();
         session.beginTransaction();
+       
         
         
-        //Query q=session.createQuery("from Student");
+        int value=60;
+        //using the Prepared statement 
+        Query q=session.createQuery("select sum(marks) from Student s where s.marks> :value");
+        q.setParameter("value",value);
+        Long marks=(Long)q.uniqueResult();  
         
-//        Query q=session.createQuery("select rollno,name,marks from Student s where s.marks>60");
-        Query q=session.createQuery("select sum(marks) from Student s where s.marks>60");
-        List marks=(List)q.list();
-        
-        for(Object obj:marks) {
-        	System.out.println(obj);
-        }
+       System.out.println(marks);
             
         session.getTransaction().commit();
         
