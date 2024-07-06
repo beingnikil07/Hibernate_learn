@@ -23,15 +23,14 @@ public class App {
         
         //Query q=session.createQuery("from Student");
         
-        Query q=session.createQuery("select rollno,name,marks from Student");
-        List<Object[]> students=(List<Object[]>)q.list();
+//        Query q=session.createQuery("select rollno,name,marks from Student s where s.marks>60");
+        Query q=session.createQuery("select sum(marks) from Student s where s.marks>60");
+        List marks=(List)q.list();
         
-        for(Object[] o:students) {
-        	System.out.println(o[0]+" : "+o[1]+" : "+o[2]);
+        for(Object obj:marks) {
+        	System.out.println(obj);
         }
-        
-        
-        
+            
         session.getTransaction().commit();
         
         
